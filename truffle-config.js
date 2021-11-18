@@ -23,7 +23,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 const private_keys = [
-  '6ff7331ca8faa02f702f3eaa8584d5a4eeb62e319e34f8a681b3c818f503c0c2'
+  '238917b188bec73fb3df666ab96534e91f800b4e5f1868f96c04177dc0364ccf'
 ]
 
 module.exports = {
@@ -60,6 +60,7 @@ module.exports = {
     // },
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
+
     rinkeby : {
       provider: () => new HDWalletProvider({
         privateKeys : private_keys, 
@@ -69,9 +70,10 @@ module.exports = {
       network_id: 4,       
       gas: 5500000,        
       confirmations: 2,    
-      timeoutBlocks: 200,  
+      timeoutBlocks: 60000000000,  
       skipDryRun: true     
     },
+
     // Useful for private networks
     // private: {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
